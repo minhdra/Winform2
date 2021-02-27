@@ -59,10 +59,10 @@ namespace Winform2.GUI
 
         private void btnthemsp_Click(object sender, EventArgs e)
         {
-            //if (cboLoai.SelectedItem != null || txtMa.Text != ""
-            //    || txtTen.Text != "" || txtMoTa.Text != ""
-            //    || cbodonvi.SelectedItem != null)
-            //{
+            if (cboLoai.Text != "" || txtMa.Text != ""
+                || txtTen.Text != "" || txtMoTa.Text != ""
+                || cbodonvi.Text != "")
+            {
                 SanPham sp = new SanPham();
                 sp.MaSP = txtMa.Text;
                 sp.TenSP = txtTen.Text;
@@ -71,7 +71,7 @@ namespace Winform2.GUI
                 sp.MoTa = txtMoTa.Text;
                 qlbus.themSP(sp);
                 MessageBox.Show("Thêm sản phẩm thành công");
-            //}
+            }
 
         }
 
@@ -81,6 +81,23 @@ namespace Winform2.GUI
             txtTen.Clear();
             txtMoTa.Clear();
             txtMa.Focus();
+        }
+
+        private void btnsua_Click(object sender, EventArgs e)
+        {
+            SanPham sp = new SanPham();
+            sp.MaSP = txtMa.Text;
+            sp.TenSP = txtTen.Text;
+            sp.MaLoai = cboLoai.Text;
+            sp.DonVi = cbodonvi.SelectedItem.ToString();
+            sp.MoTa = txtMoTa.Text;
+            qlbus.SuaSP(sp);
+        }
+
+        private void btnxoa_Click(object sender, EventArgs e)
+        {
+            string maSP = txtMa.Text;
+            qlbus.XoaSP(maSP);
         }
     }
 }

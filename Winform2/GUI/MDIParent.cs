@@ -100,6 +100,11 @@ namespace Winform2.GUI
             }
         }
 
-        
+        private void open_Click(object sender, EventArgs e)
+        {
+            FrmQuanLyHangHoa qlhh = new FrmQuanLyHangHoa();
+            qlhh.MdiParent = this;
+            qlhh.Show();
+        }
     }
 }

@@ -10,7 +10,7 @@ namespace Winform2.BUS
 {
     class LoginBUS
     {
-        UserDAO usDAO = new UserDAO(@"Data Source=DESKTOP-T7M1CD1\SQLEXPRESS;Initial Catalog=Database_Winform;Integrated Security=True");
+        UserDAO usDAO = new UserDAO(Program.strcon);
         public Users checkUser(string maNV, string pass)
         {
             return usDAO.GetUsers(maNV, pass);

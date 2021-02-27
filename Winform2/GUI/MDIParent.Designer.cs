@@ -33,7 +33,7 @@ namespace Winform2.GUI
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDIParent));
             this.menuStrip = new System.Windows.Forms.MenuStrip();
             this.editMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.undoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.open = new System.Windows.Forms.ToolStripMenuItem();
             this.redoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator6 = new System.Windows.Forms.ToolStripSeparator();
             this.cutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -95,7 +95,7 @@ namespace Winform2.GUI
             // editMenu
             // 
             this.editMenu.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.undoToolStripMenuItem,
+            this.open,
             this.redoToolStripMenuItem,
             this.toolStripSeparator6,
             this.cutToolStripMenuItem,
@@ -107,14 +107,15 @@ namespace Winform2.GUI
             this.editMenu.Size = new System.Drawing.Size(60, 20);
             this.editMenu.Text = "&Quản lý";
             // 
-            // undoToolStripMenuItem
+            // open
             // 
-            this.undoToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("undoToolStripMenuItem.Image")));
-            this.undoToolStripMenuItem.ImageTransparentColor = System.Drawing.Color.Black;
-            this.undoToolStripMenuItem.Name = "undoToolStripMenuItem";
-            this.undoToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Z)));
-            this.undoToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.undoToolStripMenuItem.Text = "&Undo";
+            this.open.Image = ((System.Drawing.Image)(resources.GetObject("open.Image")));
+            this.open.ImageTransparentColor = System.Drawing.Color.Black;
+            this.open.Name = "open";
+            this.open.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.O)));
+            this.open.Size = new System.Drawing.Size(180, 22);
+            this.open.Text = "&OpenFile";
+            this.open.Click += new System.EventHandler(this.open_Click);
             // 
             // redoToolStripMenuItem
             // 
@@ -181,13 +182,18 @@ namespace Winform2.GUI
             this.viewMenu.Size = new System.Drawing.Size(69, 20);
             this.viewMenu.Text = "&Bán hàng";
             // 
+            // toolBarToolStripMenuItem
+            // 
+            this.toolBarToolStripMenuItem.Name = "toolBarToolStripMenuItem";
+            this.toolBarToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
+            // 
             // statusBarToolStripMenuItem
             // 
             this.statusBarToolStripMenuItem.Checked = true;
             this.statusBarToolStripMenuItem.CheckOnClick = true;
             this.statusBarToolStripMenuItem.CheckState = System.Windows.Forms.CheckState.Checked;
             this.statusBarToolStripMenuItem.Name = "statusBarToolStripMenuItem";
-            this.statusBarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.statusBarToolStripMenuItem.Size = new System.Drawing.Size(126, 22);
             this.statusBarToolStripMenuItem.Text = "&Status Bar";
             this.statusBarToolStripMenuItem.Click += new System.EventHandler(this.StatusBarToolStripMenuItem_Click);
             // 
@@ -202,7 +208,7 @@ namespace Winform2.GUI
             // optionsToolStripMenuItem
             // 
             this.optionsToolStripMenuItem.Name = "optionsToolStripMenuItem";
-            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.optionsToolStripMenuItem.Size = new System.Drawing.Size(116, 22);
             this.optionsToolStripMenuItem.Text = "&Options";
             // 
             // windowsMenu
@@ -445,7 +451,7 @@ namespace Winform2.GUI
         private System.Windows.Forms.ToolStripMenuItem printPreviewToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem editMenu;
-        private System.Windows.Forms.ToolStripMenuItem undoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem open;
         private System.Windows.Forms.ToolStripMenuItem redoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem copyToolStripMenuItem;

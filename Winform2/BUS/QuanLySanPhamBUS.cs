@@ -39,5 +39,15 @@ namespace Winform2.BUS
             spd.ThemSP(sp);
 
         }
+
+        public void SuaSP(SanPham sp)
+        {
+            spd.SuaSP(sp);
+        }
+
+        public void XoaSP(string maSP)
+        {
+            spd.XoaSP(maSP);
+        }
     }
 }

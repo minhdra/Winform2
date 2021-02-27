@@ -27,8 +27,8 @@ namespace Winform2.GUI
             if(Program.us != null)
             {
                 //Mở form muốn hiện
-                FrmQuanLyHangHoa qlhh = new FrmQuanLyHangHoa();
-                qlhh.Show();
+                MDIParent md = new MDIParent();
+                md.Show();
                 //Ẩn form login
                 this.Hide();
             }

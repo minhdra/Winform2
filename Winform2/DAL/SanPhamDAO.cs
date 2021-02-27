@@ -63,24 +63,17 @@ namespace Winform2.DAL
 
         public void SuaSP(SanPham sp)
         {
-            SqlDataReader dr = dth.ExcuteReader("select * from SanPham");
-            List<SanPham> list = new List<SanPham>();
-            while (dr.Read())
-            {
-                SanPham sp = new SanPham();
-                if(sp.MaSP = )
+            dth.ExcuteNonQuery("" +
+                "update SanPham " +
+                "set TenSP = '" + sp.TenSP + "', MaLoai = '" + sp.MaLoai + "', DonVi = '" + sp.DonVi + "', MoTa = '" + sp.MoTa + "' " +
+                "where MaSP = '" + sp.MaSP+"'");
+        }
 
-
-                sp.MaSP = dr["MaSP"].ToString();
-                sp.TenSP = dr["TenSP"].ToString();
-                sp.MaLoai = dr["MaLoai"].ToString();
-                sp.DonVi = dr["DonVi"].ToString();
-                sp.MoTa = dr["MoTa"].ToString();
-                sp.AnhTo = dr["AnhTo"].ToString();
-                sp.AnhNho = dr["AnhNho"].ToString();
-                list.Add(sp);
-            }
-            return list;
+        public void XoaSP(string maSP)
+        {
+            dth.ExcuteNonQuery("" +
+                "delete from SanPham " +
+                "where MaSP = '" + maSP + "'");
         }
     }
 }

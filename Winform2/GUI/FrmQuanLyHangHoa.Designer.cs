@@ -166,6 +166,7 @@ namespace Winform2.GUI
             this.btnsua.TabIndex = 6;
             this.btnsua.Text = "Sửa SP";
             this.btnsua.UseVisualStyleBackColor = true;
+            this.btnsua.Click += new System.EventHandler(this.btnsua_Click);
             // 
             // btnxoa
             // 
@@ -175,6 +176,7 @@ namespace Winform2.GUI
             this.btnxoa.TabIndex = 7;
             this.btnxoa.Text = "Xóa SP";
             this.btnxoa.UseVisualStyleBackColor = true;
+            this.btnxoa.Click += new System.EventHandler(this.btnxoa_Click);
             // 
             // btnexit
             // 
