@@ -1,15 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
-using System.Windows.Forms;
-using System.Data;
 
-namespace Winform2.DAL
+namespace DAO
 {
-    class DataHelper
+    public class DataHelper
     {
         string strcon = @"Data Source=DESKTOP-T7M1CD1\SQLEXPRESS;Initial Catalog=Database_Winform;Integrated Security=True";
         SqlConnection con;
@@ -38,7 +37,7 @@ namespace Winform2.DAL
             {
                 return ex.Message;
             }
-}
+        }
 
         public void Close()
         {
@@ -61,7 +60,7 @@ namespace Winform2.DAL
             Open();
 
             SqlCommand cm = new SqlCommand(sql, con);
-            
+
             cm.ExecuteNonQuery();
             Close();
         }
@@ -82,7 +81,7 @@ namespace Winform2.DAL
         public void insertRow(DataTable dt, params object[] values)
         {
             DataRow dr = dt.NewRow();
-            for(int i = 0; i < values.Length; i++)
+            for (int i = 0; i < values.Length; i++)
             {
                 dr[i] = values[i];
             }
@@ -92,9 +91,9 @@ namespace Winform2.DAL
         public void insertRow2(DataTable dt, params object[] Fields_values)
         {
             DataRow dr = dt.NewRow();
-            for (int i = 0; i < Fields_values.Length; i+=2)
+            for (int i = 0; i < Fields_values.Length; i += 2)
             {
-                dr[Fields_values[i].ToString()] = Fields_values[i+1].ToString();
+                dr[Fields_values[i].ToString()] = Fields_values[i + 1].ToString();
             }
         }
     }

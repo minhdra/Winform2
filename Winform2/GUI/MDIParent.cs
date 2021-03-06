@@ -106,5 +106,10 @@ namespace Winform2.GUI
             qlhh.MdiParent = this;
             qlhh.Show();
         }
+
+        private void MDIParent_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

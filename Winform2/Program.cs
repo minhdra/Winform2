@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Winform2.GUI;
-using Winform2.Entities;
+using DTO;
 using System.Configuration;
 
 namespace Winform2
@@ -23,7 +23,9 @@ namespace Winform2
 
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            //Application.Run(new Login());
+            Application.Run(new FrmQuanLyHangHoa());
+            //Application.Run(new FrmQuanLyHangHoa_P());
         }
     }
 }

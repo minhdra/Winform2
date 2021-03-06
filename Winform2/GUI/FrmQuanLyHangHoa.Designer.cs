@@ -127,8 +127,11 @@ namespace Winform2.GUI
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 241);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(710, 259);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DataGridView_CellClick);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // txtMoTa
             // 
@@ -137,6 +140,7 @@ namespace Winform2.GUI
             this.txtMoTa.Name = "txtMoTa";
             this.txtMoTa.Size = new System.Drawing.Size(508, 77);
             this.txtMoTa.TabIndex = 3;
+            this.txtMoTa.TextChanged += new System.EventHandler(this.txtMoTa_TextChanged);
             // 
             // btnthemmoi
             // 
@@ -160,6 +164,7 @@ namespace Winform2.GUI
             // 
             // btnsua
             // 
+            this.btnsua.Enabled = false;
             this.btnsua.Location = new System.Drawing.Point(250, 212);
             this.btnsua.Name = "btnsua";
             this.btnsua.Size = new System.Drawing.Size(75, 23);
@@ -170,6 +175,7 @@ namespace Winform2.GUI
             // 
             // btnxoa
             // 
+            this.btnxoa.Enabled = false;
             this.btnxoa.Location = new System.Drawing.Point(369, 212);
             this.btnxoa.Name = "btnxoa";
             this.btnxoa.Size = new System.Drawing.Size(75, 23);

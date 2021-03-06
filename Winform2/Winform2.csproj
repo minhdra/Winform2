@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BUS\LoginBUS.cs" />
+    <Compile Include="BUS\QuanLySanPhamBUS_P.cs" />
     <Compile Include="BUS\QuanLySanPhamBUS.cs" />
     <Compile Include="DAL\LoaiSPDAO.cs" />
     <Compile Include="DAL\SanPhamDAO.cs" />
@@ -74,6 +75,12 @@
     <Compile Include="Entities\LoaiSP.cs" />
     <Compile Include="Entities\SanPham.cs" />
     <Compile Include="Entities\Users.cs" />
+    <Compile Include="GUI\FrmQuanLyHangHoa-P.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GUI\FrmQuanLyHangHoa-P.Designer.cs">
+      <DependentUpon>FrmQuanLyHangHoa-P.cs</DependentUpon>
+    </Compile>
     <Compile Include="GUI\FrmQuanLyHangHoa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +101,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="GUI\FrmQuanLyHangHoa-P.resx">
+      <DependentUpon>FrmQuanLyHangHoa-P.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="GUI\FrmQuanLyHangHoa.resx">
       <DependentUpon>FrmQuanLyHangHoa.cs</DependentUpon>
     </EmbeddedResource>
@@ -126,6 +136,19 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj">
+      <Project>{8c41884b-6b85-4834-913f-6b0d7ed979b2}</Project>
+      <Name>BUS</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DAO\DAO.csproj">
+      <Project>{85892912-dc30-4ea4-a286-2ee0e972f5ad}</Project>
+      <Name>DAO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{23de17eb-fff6-475a-bd48-415a6f153fd1}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

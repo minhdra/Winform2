@@ -1,15 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Winform2.Entities;
-using Winform2.DAL;
-using System.Data;
+using DTO;
+using DAO;
 
-namespace Winform2.BUS
+namespace BUSS
 {
-    class QuanLySanPhamBUS
+    public class QuanLySanPhamBUS
     {
         SanPhamDAO spd;
         LoaiSPDAO ld;
@@ -39,9 +39,9 @@ namespace Winform2.BUS
 
             List<SanPham> lsp = spd.getAllSanPham();
 
-            for(int x = 0; x < lsp.Count; x++)
+            for (int x = 0; x < lsp.Count; x++)
             {
-                if(maSP == lsp[x].MaSP)
+                if (maSP == lsp[x].MaSP)
                 {
                     setMaSP();
                     break;

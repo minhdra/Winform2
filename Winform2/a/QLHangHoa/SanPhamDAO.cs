@@ -1,15 +1,15 @@
-﻿using System;
+﻿using DTO;
+using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Data.SqlClient;
-using Winform2.Entities;
-using System.Data;
 
-namespace Winform2.DAL
+namespace DAO
 {
-    class SanPhamDAO
+    public class SanPhamDAO
     {
         DataHelper dth;
         DataTable dt;
@@ -22,7 +22,7 @@ namespace Winform2.DAL
         {
             dt = dth.fillDataTable("select * from SanPham where MaLoai = '" + maL + "'");
             List<SanPham> list = new List<SanPham>();
-            foreach(DataRow dr in dt.Rows)
+            foreach (DataRow dr in dt.Rows)
             {
                 SanPham sp = new SanPham();
                 sp.MaSP = dr["MaSP"].ToString();
@@ -35,7 +35,7 @@ namespace Winform2.DAL
                 list.Add(sp);
 
             }
-            
+
             return list;
         }
 
@@ -76,7 +76,7 @@ namespace Winform2.DAL
         {
             dth.ExcuteNonQuery("" +
                 "insert into SanPham (MaSP, TenSP, MaLoai, DonVi, MoTa)" +
-                "values (N'" + sp.MaSP + "',N'" + sp.TenSP + "',N'" + sp.MaLoai + "',N'" + sp.DonVi + "',N'" + sp.MoTa +"')");
+                "values (N'" + sp.MaSP + "',N'" + sp.TenSP + "',N'" + sp.MaLoai + "',N'" + sp.DonVi + "',N'" + sp.MoTa + "')");
         }
 
         public void SuaSP(SanPham sp)
@@ -84,7 +84,7 @@ namespace Winform2.DAL
             dth.ExcuteNonQuery("" +
                 "update SanPham " +
                 "set TenSP = '" + sp.TenSP + "', MaLoai = '" + sp.MaLoai + "', DonVi = '" + sp.DonVi + "', MoTa = '" + sp.MoTa + "' " +
-                "where MaSP = '" + sp.MaSP+"'");
+                "where MaSP = '" + sp.MaSP + "'");
         }
 
         public void XoaSP(string maSP)
